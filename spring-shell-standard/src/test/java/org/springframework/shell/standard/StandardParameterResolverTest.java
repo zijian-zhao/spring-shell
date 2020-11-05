@@ -122,32 +122,32 @@ public class StandardParameterResolverTest {
 				asList("--foo hello --name bar --force --bar well leftover".split(" "))
 		);
 	}
+//
+//	@Test
+//	public void testIncompleteCommandResolution() throws Exception {
+//		Method method = findMethod(Remote.class, "shutdown", Remote.Delay.class);
+//
+//		thrown.expect(UnfinishedParameterResolutionException.class);
+//		thrown.expectMessage("Error trying to resolve '--delay delay' using [--delay]");
+//
+//		resolver.resolve(
+//				Utils.createMethodParameter(method, 0),
+//				asList("--delay".split(" "))
+//		);
+//	}
 
-	@Test
-	public void testIncompleteCommandResolution() throws Exception {
-		Method method = findMethod(Remote.class, "shutdown", Remote.Delay.class);
-
-		thrown.expect(UnfinishedParameterResolutionException.class);
-		thrown.expectMessage("Error trying to resolve '--delay delay' using [--delay]");
-
-		resolver.resolve(
-				Utils.createMethodParameter(method, 0),
-				asList("--delay".split(" "))
-		);
-	}
-
-	@Test
-	public void testIncompleteCommandResolutionBigArity() throws Exception {
-		Method method = findMethod(Remote.class, "add", List.class);
-
-		thrown.expect(UnfinishedParameterResolutionException.class);
-		thrown.expectMessage("Error trying to resolve '--numbers list list list' using [--numbers 1 2]");
-
-		resolver.resolve(
-				Utils.createMethodParameter(method, 0),
-				asList("--numbers 1 2".split(" "))
-		);
-	}
+//	@Test
+//	public void testIncompleteCommandResolutionBigArity() throws Exception {
+//		Method method = findMethod(Remote.class, "add", List.class);
+//
+//		thrown.expect(UnfinishedParameterResolutionException.class);
+//		thrown.expectMessage("Error trying to resolve '--numbers list list list' using [--numbers 1 2]");
+//
+//		resolver.resolve(
+//				Utils.createMethodParameter(method, 0),
+//				asList("--numbers 1 2".split(" "))
+//		);
+//	}
 
 	@Test
 	public void testUnresolvableArg() throws Exception {

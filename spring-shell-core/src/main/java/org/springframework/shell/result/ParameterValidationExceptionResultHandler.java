@@ -48,7 +48,7 @@ public class ParameterValidationExceptionResultHandler
 
 	@Override
 	protected void doHandleResult(ParameterValidationException result) {
-		terminal.writer().println(new AttributedString("The following constraints were not met:",
+		terminal.writer().println(new AttributedString("Invalid parameter:",
 				AttributedStyle.DEFAULT.foreground(AttributedStyle.RED)).toAnsi());
 		result.getConstraintViolations().stream()
 				.forEach(v -> {
@@ -66,7 +66,7 @@ public class ParameterValidationExceptionResultHandler
 						AttributedStringBuilder ansi = new AttributedStringBuilder(100);
 						ansi.append("\t").append(description.keys().get(0), AttributedStyle.DEFAULT.foreground(AttributedStyle.RED).bold());
 						ansi.append(" ").append(description.formal(), AttributedStyle.DEFAULT.foreground(AttributedStyle.RED).underline());
-						String msg = String.format(" : %s (You passed '%s')",
+						String msg = String.format(" : %s (What you entered is: '%s')",
 								v.getMessage(),
 								String.valueOf(v.getInvalidValue())
 						);

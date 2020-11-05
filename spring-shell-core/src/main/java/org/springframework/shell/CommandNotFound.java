@@ -32,6 +32,6 @@ public class CommandNotFound extends RuntimeException {
 
 	@Override
 	public String getMessage() {
-		return String.format("No command found for '%s'", words.stream().collect(Collectors.joining(" ")));
+		return "Command not recognized.";
 	}
 }

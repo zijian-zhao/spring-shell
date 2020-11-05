@@ -42,6 +42,6 @@ public class UnfinishedParameterResolutionException extends RuntimeException {
 
 	@Override
 	public String getMessage() {
-		return String.format("Error trying to resolve '%s' using [%s]", parameterDescription, input);
+		return "Command not recognized / Invalid parameter.";
 	}
 }
