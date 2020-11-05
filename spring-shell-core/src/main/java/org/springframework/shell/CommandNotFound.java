@@ -17,7 +17,6 @@
 package org.springframework.shell;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * A result to be handled by the {@link ResultHandler} when no command could be mapped to user input

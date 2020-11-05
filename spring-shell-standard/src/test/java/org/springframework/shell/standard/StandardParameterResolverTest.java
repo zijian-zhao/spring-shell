@@ -16,16 +16,6 @@
 
 package org.springframework.shell.standard;
 
-import static java.util.Arrays.asList;
-import static java.util.Collections.singletonList;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.shell.ValueResultAsserts.assertThat;
-import static org.springframework.util.ReflectionUtils.findMethod;
-
-import java.lang.reflect.Method;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.jline.reader.ParsedLine;
 import org.jline.reader.impl.DefaultParser;
 import org.junit.Rule;
@@ -35,9 +25,17 @@ import org.springframework.core.convert.support.DefaultConversionService;
 import org.springframework.shell.CompletionContext;
 import org.springframework.shell.CompletionProposal;
 import org.springframework.shell.ParameterMissingResolutionException;
-import org.springframework.shell.UnfinishedParameterResolutionException;
 import org.springframework.shell.Utils;
 import org.springframework.shell.ValueResult;
+
+import java.lang.reflect.Method;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.Arrays.asList;
+import static java.util.Collections.singletonList;
+import static org.springframework.shell.ValueResultAsserts.assertThat;
+import static org.springframework.util.ReflectionUtils.findMethod;
 
 /**
  * Unit tests for DefaultParameterResolver.

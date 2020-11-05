@@ -25,14 +25,12 @@ import org.springframework.shell.ParameterDescription;
 import org.springframework.shell.ParameterResolver;
 import org.springframework.shell.ParameterValidationException;
 import org.springframework.shell.Utils;
-import org.springframework.stereotype.Component;
 
 import javax.validation.ElementKind;
 import javax.validation.Path;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
